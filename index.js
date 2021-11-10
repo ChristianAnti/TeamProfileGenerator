@@ -2,13 +2,19 @@ const inquirer = require("inquirer");
 const jest = require("jest");
 const Employee = require("./lib/Employee");
 const render = require("./lib/htmlRenderer")
+const path = require('path');
+const fs = require('fs');
+
+const OUTPUT_DIR = path.resolve(__dirname, "output")
+const outputPath = path.join(OUTPUT_DIR, "team.html")
 
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Managers = require("./lib/Managers");
 
-const OUTPUT_DIR = path.resolve(__dirname, "output")
-const outputPath = path.join(OUTPUT_DIR, "team.html")
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 const teamArr = []
 
@@ -46,7 +52,7 @@ function employeeQs() {
             managerQs(answers);
         }
     })
-}
+};
 
 function engineerQs(baseAnswers) {
     inquirer.prompt ([
@@ -61,7 +67,7 @@ function engineerQs(baseAnswers) {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
-        const newEngineer = new Engineer(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answerGitub)
+        const newEngineer = new Engineer(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerGitub)
         teamArr.push(newEngineer);
         if (answers.answerAddAnother === true) {
             employeeQs()
@@ -70,7 +76,7 @@ function engineerQs(baseAnswers) {
             console.log("Engineer rendered !!!")
         }
     })
-}
+};
 
 function managerQs(baseAnswers) {
     inquirer.prompt ([
@@ -94,7 +100,7 @@ function managerQs(baseAnswers) {
             console.log("Manager rendered !!!")
         }
     })
-}
+};
 
 function internQs(baseAnswers) {
     inquirer.prompt ([
@@ -109,7 +115,7 @@ function internQs(baseAnswers) {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
-        const newIntern = new intern(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answerGitub)
+        const newIntern = new intern(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerSchool)
         teamArr.push(newIntern);
         if (answers.answerAddAnother === true) {
             employeeQs()
@@ -118,7 +124,7 @@ function internQs(baseAnswers) {
             console.log("Intern rendered !!!")
         }
     })
-}
+};
 
 
 function buildTeam() {
