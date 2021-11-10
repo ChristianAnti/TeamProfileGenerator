@@ -1,24 +1,22 @@
+// the requires for the different roles
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+const Employee = require("./lib/Employee");
+
+const teamArr = []
+
+// various npm requires etc.
 const inquirer = require("inquirer");
 const jest = require("jest");
-const Employee = require("./lib/Employee");
 const render = require("./lib/htmlRenderer")
 const path = require('path');
 const fs = require('fs');
 
+// path requires 
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html")
 
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-const Managers = require("./lib/Managers");
-
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-
-const teamArr = []
-
-const profileGenerate = new Employee();
 
 function employeeQs() {
     inquirer.prompt([
@@ -91,7 +89,7 @@ function managerQs(baseAnswers) {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
-        const newManager = new manager(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answerGitub)
+        const newManager = new Manager(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answerGitub)
         teamArr.push(newManager);
         if (answers.answerAddAnother === true) {
             employeeQs()
@@ -101,6 +99,7 @@ function managerQs(baseAnswers) {
         }
     })
 };
+
 
 function internQs(baseAnswers) {
     inquirer.prompt ([
@@ -115,7 +114,7 @@ function internQs(baseAnswers) {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
-        const newIntern = new intern(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerSchool)
+        const newIntern = new Intern(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerSchool)
         teamArr.push(newIntern);
         if (answers.answerAddAnother === true) {
             employeeQs()
