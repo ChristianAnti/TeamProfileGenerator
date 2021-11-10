@@ -1,40 +1,38 @@
-<!DOCTYPE html>
 <div class="row row-primary row-primary-manager">
     <div class="col-md-3 col-name-manager">
         <h2>{{ name }}</h2>
     </div>
-    <div class="col-md1 manager-gap"></div>
+    <div class="col-md-1 manager-gap"></div>
     <div class="col-md-2 col-manager">
         <div class="row row-header">
             <h3>Role</h3>
         </div>
         <div class="row-content-manager">
-            <p><i class="fas fa headphones"></i>{{ role }}</p>
+            <p><i class="fas fa-mug-hot mr-2"></i>{{ role }}</p>
         </div>
     </div>
     <div class="col-md-2 col-manager">
         <div class="row row-header">
             <h3>ID</h3>
         </div>
-        <div class="row row-header">
+        <div class="row-content-manager">
             <p>{{ id }}</p>
         </div>
     </div>
     <div class="col-md-2 col-manager">
-        <div class="col-md-2 col-manager">
-            <h3>Email</h3>
+        <div class="row row-header">
+            <h3>E-Mail</h3>
         </div>
-        <div class="col-md-2 col-manager">
+        <div class="row-content-manager">
             <p><a class="manager-email" href="mailto:{{ email }}">{{ email }}</a></p>
         </div>
     </div>
     <div class="col-md-2 col-manager">
-        <div class="col-md-2 col-manager">
+        <div class="row row-header">
             <h3>Office Number</h3>
         </div>
-        <div class="col-md-2 col-manager">
+        <div class="row-content-manager">
             <p>{{ officeNumber }}</p>
         </div>
+    </div>
 </div>
-
-<!-- NEEDS EDITING -->

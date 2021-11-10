@@ -1,0 +1,201 @@
+body {
+    color:#504b47;
+    background-color:#faf7f3;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size:88px;
+    font-weight:600;
+    margin-left:30px;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    width:100%;
+    font-weight:bolder;
+    margin-top:10%;
+    margin-bottom:10%;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;    
+    width:100%;
+    text-align:center;
+    font-size:20px;
+    font-weight:400;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    text-align:center;
+    font-size:14px;
+    margin-top:10%;
+    width:100%;
+}
+
+a {
+    font-family: 'Raleway', sans-serif;
+    text-align:center;
+    font-size:14px;
+    color:#504b47;
+    width:100%;
+}
+
+.jumbotron {
+    border:2px solid #504b47;
+    background-image: url("../../assets/jumbotron.png");
+    background-size:100%;
+}
+
+.row-primary {
+    margin-top:15px;
+    border:3px solid #504b47;
+    border-radius:5px;
+    background-color:#d8d4cf;
+}
+
+.row-primary:hover {
+    border: 3px double #504b47;
+}
+
+.col-md-3 {
+    border-right:1px solid #504b47;
+}
+
+.col-name-manager:hover {
+    background-color:#8a4226;
+    color:#d8d4cf;
+    border-right:none;
+    transition: background-color 0.25s ease;
+}
+
+.col-name-engineer:hover {
+    background-color:#697b7b;
+    color:#d8d4cf;
+    border-right:none;
+    transition: background-color 0.25s ease;
+}
+
+.col-name-intern:hover {
+    background-color:#cb8912;
+    color:#d8d4cf;
+    border-right:none;
+    transition: background-color, 0.25s ease;
+}
+
+.col-md-2 {
+    border-left:1px solid #504b47;
+    padding-left:0px;
+    padding-right:0px;
+    width:100%;
+}
+
+.col-manager {
+    border-top:1px solid #8a4226;
+    border-bottom:1px solid #8a4226;
+}
+
+.col-engineer {
+    border-top:1px solid #697b7b;
+    border-bottom:1px solid #697b7b;
+}
+
+.col-intern {
+    border-top:1px solid #cb8912;
+    border-bottom:1px solid #cb8912;
+}
+
+.row-header {
+    border-bottom:1px solid #504b47;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.row-content-manager {
+    border-top:1px solid #8a4226;
+}
+
+.row-content-engineer {
+    border-top:1px solid #697b7b;
+}
+.row-content-intern {
+    border-top:1px solid #cb8912;
+}
+
+.manager-gap {
+    background-color:#8a4226;
+}
+
+.engineer-gap {
+    background-color:#697b7b;
+}
+
+.intern-gap {
+    background-color:#cb8912;
+}
+
+.engineer-email:hover {
+    color:#697b7b;
+    font-weight:bold; 
+}
+
+.manager-email:hover {
+    color:#8a4226;
+    font-weight:bold; 
+}
+
+.intern-email:hover {
+    color:#cb8912;
+    font-weight:bold; 
+}
+
+/* Media Rules */
+
+@media only screen and (max-width:768px) {
+
+    h1 {
+        background-color:rgba(255,255,255,0.7);
+        border:1px solid #504b47;
+        border-radius:5px;
+        text-align:center;
+        margin-left:0px;
+    }
+
+    h2 {
+        font-size:40px;
+        margin-top:5%;
+        margin-bottom:5%;
+    }
+
+    a, 
+    p {
+        font-size:20px;
+        margin-top:2%;
+        margin-bottom:2%;
+    }
+
+    .row-header {
+        background-color:#918e8a;
+        border-top:2px double #504b47;
+    }
+
+    .col-name-manager {
+        background-color:#8a4226;
+        color:#faf7f3;
+        text-align:center;
+    }
+
+    .col-name-engineer {
+        background-color:#697b7b;
+        color:#faf7f3;        
+        text-align:center;
+    }
+
+    .col-name-intern {
+        background-color: #cb8912;
+        color:#faf7f3;
+        text-align:center;
+    }
+
+}
