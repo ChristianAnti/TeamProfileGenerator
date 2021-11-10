@@ -52,6 +52,31 @@ function employeeQs() {
     })
 };
 
+
+function managerQs(baseAnswers) {
+    inquirer.prompt ([
+        {
+            type: "input",
+            message: "Please enter the manager's office number.",
+            name: "answerOfficeNumber",
+        },
+        {
+            type: "confirm",
+            message: "Please enter any more info, if aplicable.",
+            name: "answerAddAnother",
+        },
+    ]).then(function (answers) {
+        const newManager = new Manager(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerGitub)
+        teamArr.push(newManager);
+        if (answers.answerAddAnother === true) {
+            employeeQs()
+        } else {
+            buildTeam();
+            console.log("Manager rendered !!!")
+        }
+    })
+};
+
 function engineerQs(baseAnswers) {
     inquirer.prompt ([
         {
@@ -75,31 +100,6 @@ function engineerQs(baseAnswers) {
         }
     })
 };
-
-function managerQs(baseAnswers) {
-    inquirer.prompt ([
-        {
-            type: "input",
-            message: "Please enter the manager's office number.",
-            name: "answerOfficeNumber",
-        },
-        {
-            type: "confirm",
-            message: "Please enter any more info, if aplicable.",
-            name: "answerAddAnother",
-        },
-    ]).then(function (answers) {
-        const newManager = new Manager(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answerGitub)
-        teamArr.push(newManager);
-        if (answers.answerAddAnother === true) {
-            employeeQs()
-        } else {
-            buildTeam();
-            console.log("Manager rendered !!!")
-        }
-    })
-};
-
 
 function internQs(baseAnswers) {
     inquirer.prompt ([
